@@ -1,0 +1,142 @@
+#include <windows.h>
+#include "resource.h"
+
+ID_MAIN_ICON       ICON       "res\\main.ico"
+1                  24         "res\\manifest.xml"
+
+BMP_TOOLBAR_ON      BITMAP     "res\\logo_on.bmp"
+BMP_TOOLBAR_HOT     BITMAP     "res\\logo_hot.bmp"
+BMP_WINDOW          BITMAP     "res\\window.bmp"
+
+BMP_GO_ON           BITMAP     "res\\go_on.bmp"
+BMP_GO_HOT          BITMAP     "res\\go_hot.bmp"
+
+DRAGDROP CURSOR "res\\drag.cur"
+
+MENU_RIGHT MENU
+{
+   POPUP "&File"
+   {
+    MENUITEM "Open",  MENU_RIGHT_OPEN
+	MENUITEM "Edit",  MENU_RIGHT_EDIT
+	MENUITEM "Rename",  MENU_RIGHT_RENAME
+	MENUITEM SEPARATOR
+	MENUITEM "New Folder",  MENU_RIGHT_NEWFOLDER
+	MENUITEM "Delete",  MENU_RIGHT_DELETE
+  }
+   POPUP "&Folder"
+   {
+    MENUITEM "Rename",  MENU_RIGHT_RENAME
+	MENUITEM "New Folder",  MENU_RIGHT_NEWFOLDER
+	MENUITEM "Delete",  MENU_RIGHT_DELETE
+  }
+   POPUP "&Global"
+   {
+	MENUITEM "New Folder",  MENU_RIGHT_NEWFOLDER
+	MENUITEM "Update",  MENU_RIGHT_UPDATE
+  }
+}
+    
+MAINMENU MENU 
+{
+POPUP "&File"
+{
+	MENUITEM "&Open\tEnter",  210
+	MENUITEM "Open &Inside\tCtrl+PgDn",  211
+	MENUITEM "Open O&utside\tShift+Enter",  212
+	MENUITEM "&Edit\tF4",  221
+	MENUITEM SEPARATOR
+	MENUITEM "Rena&me\tF2",  230
+	MENUITEM "&Copy To...\tF5",  231
+	MENUITEM "&Move To...\tF6",  232
+	MENUITEM "&Delete\tDel",  233
+	MENUITEM SEPARATOR
+	MENUITEM "&Split file...",  238
+	MENUITEM "Com&bine files...",  239
+	MENUITEM SEPARATOR
+	MENUITEM "P&roperties\tAlt+Enter",  240
+	MENUITEM "Comme&nt...\tCtrl+Z",  241
+	MENUITEM "Calculate checksum",  242
+	MENUITEM "Di&ff",  243
+	MENUITEM SEPARATOR
+	MENUITEM "Create Folder\tF7",  250
+	MENUITEM "Create File\tCtrl+N",  251
+	MENUITEM SEPARATOR
+	MENUITEM "E&xit\tAlt+F4",  8
+}
+POPUP "&Edit"
+{
+	MENUITEM "Select &All\tShift+[Grey +]",  330
+	MENUITEM "Deselect All\tShift+[Grey -]",  331
+	MENUITEM "&Invert Selection\tGrey *",  332
+	MENUITEM "Select...\tGrey +",  333
+	MENUITEM "Deselect...\tGrey -",  334
+	MENUITEM "Select by Type\tAlt+[Grey+]",  335
+	MENUITEM "Deselect by Type\tAlt+[Grey -]",  336
+}
+POPUP "&View"
+{
+	MENUITEM "Lar&ge Icons\tCtrl+1",  ID_VIEW_LARGE
+	MENUITEM "S&mall Icons\tCtrl+2",  ID_VIEW_SMALL
+	MENUITEM "&List\tCtrl+3",  ID_VIEW_LIST
+	MENUITEM "&Details\tCtrl+4",  ID_VIEW_DETAILS, CHECKED
+}
+POPUP "F&avorites"
+{
+	POPUP "&Add folder to Favorites as"
+	{
+		MENUITEM SEPARATOR
+	}
+	MENUITEM SEPARATOR
+}
+POPUP "&Tools"
+{
+	MENUITEM "&Options...",  510
+	MENUITEM "&Benchmark",  511
+}
+POPUP "&Help"
+{
+	MENUITEM "DEGUG...",  IDM_DEBUG
+	POPUP "DebugLevel"
+	{
+          MENUITEM "Only Errors",  IDM_DEBUG_ERROR, CHECKED
+          MENUITEM "ALL(Errors+Log)",  IDM_DEBUG_ALL
+    }
+}
+}
+
+2222  DIALOGEX 0, 0, 540, 200
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_NOIDLEMSG | WS_POPUP | WS_CAPTION | WS_SYSMENU| WS_VISIBLE // WS_SYSMENU |WS_VISIBLE
+CAPTION "EMpty"
+FONT 8, "MS Sans Serif"
+{ 
+}
+
+
+1 VERSIONINFO
+FILEVERSION 0,1,0,1
+PRODUCTVERSION 0,1,0,1
+FILETYPE VFT_APP
+{
+  BLOCK "StringFileInfo"
+	 {
+		 BLOCK "040904E4"
+		 {
+			 VALUE "CompanyName", "AM71113363"
+			 VALUE "FileVersion", ""
+			 VALUE "FileDescription", "XP-Explorer"
+			 VALUE "InternalName", ""
+			 VALUE "LegalCopyright", ""
+			 VALUE "LegalTrademarks", ""
+			 VALUE "OriginalFilename", ""
+			 VALUE "ProductName", ""
+			 VALUE "ProductVersion", "v1.1"
+		 }
+	 }
+  BLOCK "VarFileInfo"
+	 {
+		 VALUE "Translation", 0x0409, 1252
+	 }
+}
+
+
